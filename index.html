@@ -2,21 +2,107 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vocabulario Español</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: sans-serif; padding: 2rem; }
-    .word { margin-bottom: 1rem; }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      color: #333;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #0077b6;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .vocab-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .word-card {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .word-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .word {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #023e8a;
+    }
+
+    .definition {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #00b4d8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #0077b6;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
   <h1>Vocabulario en Español</h1>
-  <div class="word">
-    <strong>Casa</strong> – House 🏠
-    <br><em>Ejemplo:</em> "Mi casa es tu casa."
-  </div>
-  <div class="word">
-    <strong>Comida</strong> – Food 🍽️
-    <br><em>Ejemplo:</em> "Me encanta la comida mexicana."
+
+  <div class="vocab-container">
+    <div class="word-card">
+      <div class="word">Manzana</div>
+      <div class="definition">Fruta roja o verde, dulce y jugosa.</div>
+      <button>Escuchar</button>
+    </div>
+    <div class="word-card">
+      <div class="word">Casa</div>
+      <div class="definition">Lugar donde vive una persona o familia.</div>
+      <button>Escuchar</button>
+    </div>
+    <div class="word-card">
+      <div class="word">Libro</div>
+      <div class="definition">Conjunto de hojas escritas o impresas encuadernadas.</div>
+      <button>Escuchar</button>
+    </div>
+    <!-- Agrega más palabras aquí -->
   </div>
 </body>
 </html>
