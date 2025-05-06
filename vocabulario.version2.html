@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocabulario Interactivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f1f5f9;
+      padding: 2rem;
+      color: #1e293b;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0f172a;
+    }
+
+    table {
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem auto;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    th {
+      background-color: #e0f2fe;
+      color: #0c4a6e;
+    }
+
+    tr:hover {
+      background-color: #f8fafc;
+    }
+
+    button {
+      padding: 0.4rem 0.8rem;
+      background-color: #0ea5e9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0284c7;
+    }
+
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      th {
+        text-align: center;
+      }
+
+      td {
+        border: none;
+        text-align: center;
+        padding: 1rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Vocabulario en Español</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Palabra</th>
+        <th>Definición</th>
+        <th>Escuchar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Manzana</td>
+        <td>Fruta roja o verde, dulce y jugosa.</td>
+        <td><button onclick="speak('Manzana')">🔊</button></td>
+      </tr>
+      <tr>
+        <td>Casa</td>
+        <td>Lugar donde vive una persona o familia.</td>
+        <td><button onclick="speak('Casa')">🔊</button></td>
+      </tr>
+      <tr>
+        <td>Libro</td>
+        <td>Conjunto de hojas escritas o impresas.</td>
+        <td><button onclick="speak('Libro')">🔊</button></td>
+      </tr>
+      <tr>
+        <td>Perro</td>
+        <td>Animal doméstico, amigo fiel del humano.</td>
+        <td><button onclick="speak('Perro')">🔊</button></td>
+      </tr>
+      <tr>
+        <td>Escuela</td>
+        <td>Institución para enseñar y aprender.</td>
+        <td><button onclick="speak('Escuela')">🔊</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function speak(word) {
+      const utterance = new SpeechSynthesisUtterance(word);
+      utterance.lang = 'es-ES'; // español
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>
